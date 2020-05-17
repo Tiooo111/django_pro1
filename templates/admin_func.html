@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>管理商品</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content=""
+	/>
+        	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- Meta tag Keywords -->
+	<!-- css files -->
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link rel="stylesheet" href="/static/css/fontawesome-all.css">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+	<!-- web-fonts -->
+	<link href="http://maxcdn.bootstrapcdn.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+	<link href="http://maxcdn.bootstrapcdn.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<!-- //web-fonts -->
+</head>
+<body>
+	<div id="bg">
+		<canvas></canvas>
+		<canvas></canvas>
+		<canvas></canvas>
+	</div>
+<style>
+.myp{ float:left;  border:2px solid rgb(255, 255, 255)
+}
+</style>
+
+<br>
+<br>
+<div class="sub-main-w3">
+    <form  action="/CGoods/" method="post" >
+        <div class="form-style-agile">
+				<label>
+					<i class="fas fa-unlock-alt"></i>
+					商品ID
+				</label>
+				<input type="text" name="ID"  />
+        </div>
+        <div class="form-style-agile">
+				<label>
+					<i class="fas fa-unlock-alt"></i>
+					商品名称
+				</label>
+				<input type="text" name="NAME"/>
+        </div>
+                <div class="form-style-agile">
+				<label>
+					<i class="fas fa-unlock-alt"></i>
+					售价
+				</label>
+				<input type="text" name="OUTPUT"/>
+        </div>
+                <div class="form-style-agile">
+				<label>
+					<i class="fas fa-unlock-alt"></i>
+					进价
+				</label>
+				<input type="text" name="INPUT" />
+        </div>
+    <li>
+        <label class="anim">
+            <input type="radio" value="ADD" name="MET"/>添加商品
+        </label>
+    </li>
+    <li>
+        <label class="anim">
+            <input type="radio" value="MOD"  name="MET"/>修改商品
+        </label>
+    </li>
+    <li>
+        <label class="anim">
+            <input type="radio" value="SUB"  name="MET"/>删除商品
+        </label>
+    </li>
+    <input type="submit" value="提交">
+</form>
+	<script src="/static/js/jquery-3.3.1.min.js"></script>
+	<!-- //Jquery -->
+
+	<!-- effect js -->
+	<script src="/static/js/canva_moving_effect.js"></script>
+</body>
+</html>

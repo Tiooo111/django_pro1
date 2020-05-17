@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+<title>首页</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content=""
+	/>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- Meta tag Keywords -->
+	<!-- css files -->
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link rel="stylesheet" href="/static/css/fontawesome-all.css">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+	<!-- web-fonts -->
+	<link href="http://maxcdn.bootstrapcdn.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+	<link href="http://maxcdn.bootstrapcdn.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<!-- //web-fonts -->
+</head>
+<body>
+	<div id="bg">
+		<canvas></canvas>
+		<canvas></canvas>
+		<canvas></canvas>
+	</div>
+
+<style>
+.myp{ float:left;  border:2px solid rgb(255, 255, 255)
+}
+</style>
+	<div class="exp">
+<form action="/BUY/" method="post",class="exp">
+    {% csrf_token %}
+    <div><br>
+<table border=1 id="tab1" >
+    <tr>
+        <th><span style="color: #f0f8ff; ">商品ID</span></th>
+        <td> |</td>
+        <th><span style="color: #f0f8ff; ">商品名</span></th>
+        <td> |</td>
+        <th><span style="color: #f0f8ff; ">售价</span></th>
+    </tr>
+    {% for goods in Goods%}
+    <tr>
+        <th><span style="color: #f0f8ff; ">{{ goods.商品ID }}</span></th>
+        <td> |</td>
+        <th><span style="color: #f0f8ff; ">{{ goods.商品名 }}</span></th>
+        <td> |</td>
+        <th><span style="color: #f0f8ff; ">{{ goods.售价 }}</span></th>
+    </tr>
+    {% endfor %}
+</table>
+    </div>
+</form>
+</div>
+	<div class="sub-main-w3">
+<center>
+<form action="/BUY/" method="post">
+    {% csrf_token %}
+    <div><br>
+    {% for goods in Goods%}
+             <div class="form-style-agile">
+				<label>
+					<i class="fas fa-user"></i>
+					{{ goods.商品名 }}:
+				</label>
+				<input type="text" name="{{ goods.商品ID }}" value="0" style="width:100px; height:20px;"/>
+			</div>
+    {% endfor %}
+    <span style="color: #f0f8ff; " >支付方式： <input type="text" name="MET" value="支付宝" style="width:50px; height:10px;" align="right" >
+            <br> </span>
+			<input type="submit" value="购买">
+     </div>
+</form>
+</center>
+    </div>
+	<script src="/static/js/jquery-3.3.1.min.js"></script>
+	<!-- //Jquery -->
+
+	<!-- effect js -->
+	<script src="/static/js/canva_moving_effect.js"></script>
+</body>
+</html>

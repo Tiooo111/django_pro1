@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+        	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- Meta tag Keywords -->
+	<!-- css files -->
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link rel="stylesheet" href="/static/css/fontawesome-all.css">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+	<!-- web-fonts -->
+	<link href="http://maxcdn.bootstrapcdn.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+	<link href="http://maxcdn.bootstrapcdn.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<!-- //web-fonts -->
+</head>
+<body>
+	<div id="bg">
+		<canvas></canvas>
+		<canvas></canvas>
+		<canvas></canvas>
+	</div>
+<center>
+    <div class="sub-main-w3">
+<form action="/admin_func/" method="POST">
+<table border=1 id="tab1">
+    <tr>
+        <th><span style="color: #f0f8ff; ">商品ID</span></th>
+        <td> |</td>
+        <th><span style="color: #f0f8ff; ">商品名</span></th>
+        <td> |</td>
+        <th><span style="color: #f0f8ff; ">售价</span></th>
+        <td> |</td>
+        <th><span style="color: #f0f8ff; ">进价</span></th>
+    </tr>
+    {% for goods in Goods%}
+    <tr>
+        <th><span style="color: #f0f8ff; ">{{ goods.商品ID }}</span></th>
+        <td> |</td>
+        <th><span style="color: #f0f8ff; ">{{ goods.商品名 }}</span></th>
+        <td> |</td>
+        <th><span style="color: #f0f8ff; ">{{ goods.售价 }}</span></th>
+        <td>|</td>
+        <th><span style="color: #f0f8ff; ">{{ goods.进价 }}</span></th>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<input type="submit" value="管理商品">
+</center>
+</form></div>
+	<script src="/static/js/jquery-3.3.1.min.js"></script>
+	<!-- //Jquery -->
+
+	<!-- effect js -->
+	<script src="/static/js/canva_moving_effect.js"></script>
+</body>
+</html>
